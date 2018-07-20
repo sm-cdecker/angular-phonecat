@@ -8,7 +8,7 @@ angular.
       removeClass: animateOut
     };
 
-    function animateIn(element, className, done) {
+    function animateIn(element: any, className: string, done: any) {
       if (className !== 'selected') return;
 
       element.css({
@@ -20,12 +20,12 @@ angular.
         top: 0
       }, done);
 
-      return function animateInEnd(wasCanceled) {
+      return function animateInEnd(wasCanceled: boolean) {
         if (wasCanceled) element.stop();
       };
     }
 
-    function animateOut(element, className, done) {
+    function animateOut(element: any, className: string, done: any) {
       if (className !== 'selected') return;
 
       element.css({
@@ -36,7 +36,7 @@ angular.
         top: -500
       }, done);
 
-      return function animateOutEnd(wasCanceled) {
+      return function animateOutEnd(wasCanceled: boolean) {
         if (wasCanceled) element.stop();
       };
     }
